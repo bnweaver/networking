@@ -89,12 +89,16 @@ public class networkGUI extends JFrame implements ActionListener{
 		Object source = a.getSource();
 		
 		if (source == reset) {
-			printer.setText("");
 			textbox.setText("");
+			printer.setText("");
 			functions.binary = "";
 			functions.count0 = 0;
 			functions.count1 = 0;
 			functions.index = 0;
+			functions.charCount = "";
+			functions.bitCount = 0;
+			functions.ready = false;
+			functions.counter = 0;
 			functions.zeros = new int[0];
 		}
 		
@@ -107,10 +111,12 @@ public class networkGUI extends JFrame implements ActionListener{
 				
 			}
 			if (menuCode == 3) {
-				
+				functions.charCount = textbox.getText();
+				functions.asynchronous(functions.charCount);
 			}
 			if (menuCode == 4) {
-				
+				functions.charCount = textbox.getText();
+				functions.synchronous(functions.charCount);
 			}
 			if (menuCode == 5) {
 				
@@ -118,26 +124,81 @@ public class networkGUI extends JFrame implements ActionListener{
 		}
 		
 		if (source == runLength) {
+			textbox.setText("");
+			printer.setText("");
+			functions.binary = "";
+			functions.count0 = 0;
+			functions.count1 = 0;
+			functions.index = 0;
+			functions.charCount = "";
+			functions.bitCount = 0;
+			functions.ready = false;
+			functions.counter = 0;
+			functions.zeros = new int[0];
 			menuCode = 1;
 			instruction.setText("Enter a string of 0s and 1s and then press Enter  (Make sure to end with a 1!)");
 		}
 		
 		if (source == codeDivision) {
+			textbox.setText("");
+			printer.setText("");
+			functions.binary = "";
+			functions.count0 = 0;
+			functions.count1 = 0;
+			functions.index = 0;
+			functions.charCount = "";
+			functions.bitCount = 0;
+			functions.ready = false;
+			functions.counter = 0;
+			functions.zeros = new int[0];
 			menuCode = 2;
 			
 		}
 		
 		if (source == asynchronous) {
+			textbox.setText("");
+			printer.setText("");
+			functions.binary = "";
+			functions.count0 = 0;
+			functions.count1 = 0;
+			functions.index = 0;
+			functions.charCount = "";
+			functions.bitCount = 0;
+			functions.ready = false;
+			functions.counter = 0;
+			functions.zeros = new int[0];
 			menuCode = 3;
-			
+			instruction.setText("Please enter an integer for the number of characters you want to send");
 		}
 		
 		if (source == synchronous) {
+			textbox.setText("");
+			printer.setText("");
+			functions.binary = "";
+			functions.count0 = 0;
+			functions.count1 = 0;
+			functions.index = 0;
+			functions.charCount = "";
+			functions.bitCount = 0;
+			functions.ready = false;
+			functions.counter = 0;
+			functions.zeros = new int[0];
 			menuCode = 4;
-			
+			instruction.setText("Please enter an integer for the number of characters you want to send");
 		}
 		
 		if (source == crcError) {
+			textbox.setText("");
+			printer.setText("");
+			functions.binary = "";
+			functions.count0 = 0;
+			functions.count1 = 0;
+			functions.index = 0;
+			functions.charCount = "";
+			functions.bitCount = 0;
+			functions.ready = false;
+			functions.counter = 0;
+			functions.zeros = new int[0];
 			menuCode = 5;
 		}
 	}

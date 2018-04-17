@@ -11,6 +11,10 @@ public class functions {
 	public static int count0 = 0;
 	public static int index = 0;
 	
+	public static String charCount;
+	public static int counter = 0;
+	public static int bitCount = 0;
+	
 	public static boolean ready;
 
 	public static void runLength(String b) {
@@ -122,18 +126,57 @@ public class functions {
 		}
 		else 
 			networkGUI.printer.setText("Error. Please check that you only submitted 1s and 0s and that your string ends in a 1. Hit Reset and Try Again");
+		ready = false;
 	}
 	
 	public void codeDivision() {
 		
 	}
 	
-	public void asynchronous() {
-		
+	public static void asynchronous(String a) {
+		for (int x = 0; x < a.length(); x++) {
+			if (!Character.isDigit(a.charAt(x))) {
+				counter++;
+			}
+		}
+		if (counter == 0) {
+			String text = "";
+			text += "When calculating the amount of bits sent via an asynchronous connection,\n" +
+					"you have to take into account the start bit, stop bit, and parity bit that are\n"
+					+ "added to each frame.\n\n" +
+					"Each frame is 8 bits for the data plus those 3 aforementioned bits.\n"
+					+ "Therefore, each frame is 11 bits long.\n\n";
+			
+			bitCount = Integer.parseInt(charCount) * 11;
+			
+			text += "To calculate the amount of bits, you then multiply your number of characters (or bytes) by 11:\n" +
+					charCount + " * 11 = " + bitCount +
+					"\n\nUsing the asynchronous connection, your " + charCount + " characters were sent using " + bitCount +
+					" bits.";
+			
+			networkGUI.printer.setText(text);
+		}
+		else {
+			networkGUI.printer.setText("Please make sure you only entered only one integer value!");
+		}
 	}
 	
-	public void synchronous() {
-		
+	public static void synchronous(String s) {
+		for (int x = 0; x < s.length(); x++) {
+			if (!Character.isDigit(s.charAt(x))) {
+				counter++;
+			}
+		}
+		if (counter == 0) {
+			String text = "";
+			
+			
+			
+			networkGUI.printer.setText(text);
+		}
+		else {
+			networkGUI.printer.setText("Please make sure you only entered only one integer value!");
+		}
 	}
 	
 	public void crcError() {
